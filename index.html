@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Just Fruit - Fruit from all over the world</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/indexstyle.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script type="text/javaScript" src="javascript/script.js"></script>
+  <script src="https://kit.fontawesome.com/5142723e22.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+      <div id="menu">
+        <ul>
+          <!-- Nedan tagg är sökrutan för mobil -->
+          <li><input type="text" placeholder="Sök frukter här..." id="search-box"></li>
+          <li><a href="index.html">Hem</a></li>
+          <li><a href="#">Nyheter</a></li>
+          <li><a href="varafrukter.html">Våra frukter</a></li>
+          <li><a href="#">Fruktkorgar</a></li>
+          <li><a href="#">Partners</a></li>
+          <li><a href="#">Om oss</a></li>
+        </ul>
+      </div>
+      <div id="left-icons">
+        <div id="hamburger" onclick="toggleActive('menu')">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+      <div id="logo">
+        <h1>Just Fruit</h1>
+      </div>
+      <div id="right-icons">
+        <a href="#" id="profile"><i class="fa-solid fa-user"></i></a>
+        <a href="#" id="basket"><i class="fa-solid fa-basket-shopping"></i></a>
+      </div>
+    </header>
+    <div id="hero">
+      <div id="hero-search">
+        <a href="#"><i class="fa-solid fa-magnifying-glass" onclick="document.getElementById('hero-search-box').value = ''"></i></a>
+        <!-- Nedan tagg är sökrutan för tablet och desktop -->
+        <input type="text" placeholder="Sök frukter här..." id="hero-search-box">
+      </div>
+      <!-- Här är videos till herosektionen, den översta är till mobil (vertikal video) den andra är till tablet och desktop (horisonell video) -->
+      <video autoplay loop muted plays-inline class="herovideomobil">
+        <source src="videos/herovideomobil.mp4" type="video/mp4">
+      </video>
+      <video autoplay loop muted plays-inline class="herovideo">
+        <source src="videos/herovideo.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div id="main">
+      <div id="featured-container">
+        <div class="featured card">
+            <div class="card-image">
+              <a href="#"><img src="https://images.pexels.com/photos/1300975/pexels-photo-1300975.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"></a>
+            </div>
+            <div class="card-text">
+              <h1>Yellows & Oranges Fruktmix</h1>
+              <p>
+                Vår exotiska fruktkorg fylld med utsökta frukter som banan, mango, ananas och en citrusbomb.
+              </p>
+            </div>
+        </div>
+        <div class="featured card">
+            <div class="card-image">
+              <a href="#"><img src="https://images.pexels.com/photos/3252766/pexels-photo-3252766.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"></a>
+            </div>
+            <div class="card-text">
+              <h1>Coco Melon Fruktmix</h1>
+              <p>
+                Lyxa till det med lite av allt! Innehåller de söta och syrliga favoriterna japansk cantaloupe, tigermelon,
+                granatäpple, pomelo och kokosnöt.
+              </p>
+            </div>
+        </div>
+      </div>
+      <div id="tags">
+        <div id="discount" class="latest-news">
+          <p>
+            NY HÄR? Få 10% på hela sortimentet! <br> Använd koden: NY10
+          </p>
+        </div>
+        <div id="info" class="latest-news">
+          <p>
+            Alltid fraktfritt på beställningar över 399 kr!
+          </p>
+        </div>
+    </div>
+    </div>
+    <div id="secondary">
+      <div class="second card">
+        <div class="card-image">
+          <a href="#"><img src="https://images.pexels.com/photos/2238309/pexels-photo-2238309.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"></a>
+        </div>
+        <div class="card-text">
+          <h2>Thai banan</h2>
+          <p>SEK X kr/kg</p>
+          <button class="addbtn">Lägg i varukorg</button>
+        </div>
+      </div>
+      <div class="second card">
+        <div class="card-image">
+          <a href="#"><img src="https://images.pexels.com/photos/7657271/pexels-photo-7657271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"></a>
+        </div>
+        <div class="card-text">
+          <h2>Japansk cantaloupe</h2>
+          <p>SEK X kr/kg</p>
+          <button class="addbtn">Lägg i varukorg</button>
+        </div>
+      </div>
+      <div class="second card">
+        <div class="card-image">
+          <a href="#"><img src="https://images.pexels.com/photos/5989139/pexels-photo-5989139.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"></a>
+        </div>
+        <div class="card-text">
+          <h2>Granatäpple</h2>
+          <p>SEK X kr/st</p>
+          <button class="addbtn">Lägg i varukorg</button>
+        </div>
+      </div>
+      <div class="second card">
+        <div class="card-image">
+          <a href="#"><img src="https://images.pexels.com/photos/5644988/pexels-photo-5644988.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"></a>
+        </div>
+        <div class="card-text">
+          <h2>Röda vindruvor</h2>
+          <p>SEK X kr/kg</p>
+          <button class="addbtn">Lägg i varukorg</button>
+        </div>
+      </div>
+      <div class="second card">
+        <div class="card-image">
+          <a href="#"><img src="https://images.pexels.com/photos/965986/pexels-photo-965986.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"></a>
+        </div>
+        <div class="card-text">
+          <h2>Physalis</h2>
+          <p>SEK X kr/hg</p>
+          <button class="addbtn">Lägg i varukorg</button>
+        </div>
+      </div>
+      <div class="second card">
+        <div class="card-image">
+          <a href="#"><img src="https://images.pexels.com/photos/5945757/pexels-photo-5945757.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"></a>
+        </div>
+        <div class="card-text">
+          <h2>Persimmon</h2>
+          <p>SEK X kr/st</p>
+          <button class="addbtn">Lägg i varukorg</button>
+        </div>
+      </div>
+      <div class="second card">
+        <div class="card-image">
+          <a href="#"><img src="https://images.pexels.com/photos/4397920/pexels-photo-4397920.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"></a>
+        </div>
+        <div class="card-text">
+          <h2>Persika</h2>
+          <p>SEK X kr/st</p>
+          <button class="addbtn">Lägg i varukorg</button>
+        </div>
+      </div>
+      <div class="second card">
+        <div class="card-image">
+          <a href="#"><img src="https://images.pexels.com/photos/5645127/pexels-photo-5645127.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"></a>
+        </div>
+        <div class="card-text">
+          <h2>Päron</h2>
+          <p>SEK X kr/st</p>
+          <button class="addbtn">Lägg i varukorg</button>
+        </div>
+      </div>
+      <a href="varafrukter.html" class="fruktknapp"><p>Visa alla</p></a>
+    </div>
+    <div id="footer">
+      <div id="footer-lists">
+        <div class="footer-heading footer-1">
+          <h2>Om</h2>
+          <ul class="footer-ul">
+            <li><a href="#">Vår historia</a></li>
+            <li><a href="#">Om oss</a></li>
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">Produkter</a></li>
+            <li><a href="#">Mina sidor</a></li>
+          </ul>
+        </div>
+        <div class="footer-heading footer-2">
+          <h2>Hjälp</h2>
+          <ul class="footer-ul">
+            <li><a href="#">Köpvillkor</a></li>
+            <li><a href="#">Leverans</a></li>
+            <li><a href="#">Vanliga frågor</a></li>
+            <li><a href="#">Kontakta oss</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="footer-heading footer-3">
+          <h2>Sociala medier</h2>
+          <ul class="footer-ul">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Youtube</a></li>
+          </ul>
+        </div>
+        <div class="footer-email-form">
+          <h2>Prenumerera på vårt nyhetsbrev </h2>
+          <input type="email" placeholder="Din e-postadress" id="footer-email">
+          <input type="submit" value="OK" id="footer-email-btn">
+        </div>
+        <div class="footer-cp">
+          <p class="cp-text">
+            © Copyright 2023 Just Fruit.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
