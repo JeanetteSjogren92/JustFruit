@@ -1,0 +1,567 @@
+/* Vår gamla bas-css från labb 3*/
+/* Margin för att det inte ska bli luft utanför. Text-align för att centrera alltihop.  */
+body {
+    position: relative;
+    min-width: 360px;
+}
+
+/* Allmän CSS */
+img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+p {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.card-text p {
+    font-size: 16px;
+}
+
+.featured .card-text p {
+    font-size: 16px;
+}
+
+/* Här börjar CSS som sätter strukturen för vårt grid */
+#wrapper {
+    box-sizing: border-box;
+    position: relative;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+/* Här börjar CSS för menyn */
+header {
+    position: sticky;
+    top: 0px;
+    background-color: rgba(255, 255, 255, 0.829);
+    grid-column: 1 / 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    height: 70px;
+    padding: 10px;
+    z-index: 2;
+}
+
+/* Hidden menu items */
+#menu ul {
+    display: none;
+}
+
+#menu a {
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+}
+
+/* Visible menu items */
+#menu.active ul {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 200px;
+    height: calc(100vh - 120px);
+    background-color: rgba(215, 159, 106, 0.86);
+    top: 90px;
+    left: 0px;
+    padding: 15px;
+    box-shadow: 0px 8px 16px 0px rgb(95, 95, 95);
+}
+
+/* Svart logga (mobil och tablet) */
+#logo h1 {
+    grid-column: 2 / 3;
+    text-align: center;
+    font-size: 30px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+li {
+    margin: 10px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#left-icons {
+    grid-column: 1 / 2;
+    position: absolute;
+    gap: 30px;
+    display: flex;
+    align-items: center;
+}
+
+#right-icons {
+    grid-column: 3 / 4;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.fa-solid {
+    font-size: 30px;
+    color:  rgb(128, 98, 68);
+}
+
+/* Här börjar CSS till sökområdet */
+#search img {
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    object-fit: scale-down;
+}
+
+.fa-solid.fa-magnifying-glass {
+    display: none;
+}
+
+/* I hamburgarmenyn: Hidden search-box items */
+#search-box {
+    display: block;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+}
+
+input[type=text],
+input[type=text]:focus {
+    box-sizing: border-box;
+    padding-left: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    outline: none;
+    color: rgb(0, 0, 0);
+}
+
+/* Här börjar CSS för Hero-search, i mobilvyn är den dold. Under mediatagg för tablet blir den synlig. */
+#hero-search-box {
+    display: none;
+}
+
+/* Här börjar CSS för Herosection */
+#hero {
+    position: relative;
+    display: grid;
+    grid-column: 1 / 2;
+    min-height: 800px;
+}
+
+/* Här börjar CSS för videos som visar i Herosection, här används z-index för videon ska hamna "bakom" sökrutan så att sökrutan alltid är framför videon. Z-index används alltså för att välja vilket element som prioriteras, lite som "placera längst bak" i Illustrator */
+.herovideomobil {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Nedan tagg används för att dölja videon som skall visas i tablet och desktop */
+.herovideo {
+    display: none;
+}
+
+/* CSS för main */
+#main {
+    grid-column: 1 / 2;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#featured-container {
+    grid-column: 1 / 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#featured, .card, .card-image, .card-text {
+    display: grid;
+    gap: 10px;
+}
+
+#tags {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    display: grid;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+#tags p {
+    font-size: 16px;
+}
+
+/* Här börjar CSS som placerar de olika delarna i gridden */
+.latest-news {
+    display: grid;
+    background-color:  rgb(240, 181, 122);
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    height: 40px;
+    align-items: center;
+}
+
+.latest-news p {
+    padding-top: 0;
+}
+
+#secondary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column: 1 / 2;
+    gap: 15px;
+    margin-top: 15px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#secondary .card-text {
+    padding: 10px;
+    text-align: center;
+}
+
+.addbtn {
+    background-color: rgb(221, 184, 148);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Här börjar css för knappen i secondary */
+.fruktknapp{
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(221, 184, 148);
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+    font-size: medium;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.fruktknapp p {
+    padding-top: 0;
+}
+
+#extrafrukter {
+    display: none;
+}
+
+#extrafrukter.active {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Här börjar CSS för footer */
+#footer {
+    grid-column: 1 / 3;
+    grid-template-columns: 1fr;
+    background-color: rgb(234, 217, 201);
+    height: 250px;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+#footer h2 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+#footer-lists {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    gap: 20px;
+    padding-top: 10px;
+}
+
+.footer-ul li {
+    margin: 0;
+    margin-bottom: 7px;
+}
+
+.footer-email-form {
+    width: 250px;
+}
+
+#footer-email {
+    width: 185px;
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+    outline: none;
+}
+
+#footer-email-btn {
+    background-color: rgb(219, 172, 129);
+    width: 40px;
+    padding: 5px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer-cp {
+    position: absolute;
+    display: block;
+    font-size: 12px;
+    bottom: 15px;
+}
+
+/* ******************Här ska CSS för tablet vara******************* */
+@media screen and (min-width: 768px) {
+
+    /* Nedan tagg tar bort det första listelementet (sökrutan som är dold) från menylistan */
+    #menu ul li:first-child {
+        display: none;
+    }
+
+    /* Nedan tagg ser till att sökrutan från mobil inte ligger kvar när tablet tar över. */
+    #search-box {
+        display: none;
+    }
+
+    #hero {
+        grid-column: 1 / 7;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    #hero-search {
+        grid-column: 4/10;
+        position: relative;
+        height: 45px;
+        top: 500px;
+    }
+
+    .fa-solid.fa-magnifying-glass {
+        display: block;
+        position: absolute;
+        top: 9px;
+        left: 8px;
+        font-size: 25px;
+        z-index: 1;
+    }
+
+    /* CSS för Hero-search till tablet och desktop */
+    #hero-search-box {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 45px;
+        padding-left: 50px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    /* Nedan tagg ser till att mobilvideon inte visas i tablet och desktop */
+    .herovideomobil {
+        display: none;
+    }
+
+    /* Nedan tagg ser till att videon till tablet och desktop visas */
+    .herovideo {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    #main {
+        grid-column: 1 / 2;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    #featured-container {
+        grid-column: 1 / 5;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #tags {
+        grid-column: 1 / 3;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #secondary {
+        grid-column: 1 / 2;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .fruktknapp{
+        grid-column: 1 / 4;
+    }
+
+    #extrafrukter.active {
+        grid-column: 1 / 4;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #footer-lists {
+        justify-content: space-evenly;
+    }
+}
+
+/* ******************Här ska CSS för desktop vara******************* */
+@media screen and (min-width: 1258px) {
+
+    header {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    #hamburger {
+        display: none;
+    }
+
+     /* Gemensam css aktiv och icke aktiv meny*/
+     #menu ul, #menu.active ul {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        background-color: transparent;
+        box-shadow: none;
+        width: 100%;
+        padding: 0;
+        height: 45px;
+    }
+
+    /* Icke aktiv meny*/
+    #menu {
+        grid-column: 3 / 12;
+        position: relative;
+        top: 5px;
+    }
+
+    #menu ul li {
+        flex: 1 1 0;
+    }
+    
+
+    #menu li a {
+        box-sizing: border-box;
+        display: block;
+        text-align: center;
+        width: 100%;
+        font-size: 20px;
+    }
+
+    /* Aktiv meny */
+    #menu.active {
+        height: 45px;
+    }
+
+    #menu.active ul {
+        top: 0;
+    }
+
+    #logo {
+        grid-column: 1 / 3;
+        position: absolute;
+        width: 100%;
+    }
+    
+    #logo h1 {
+        font-size: 40px;
+    }
+
+    /* Tips, det går fortfarande att använda gap och right här för positionering efter som #icons fortfarande ärver display:flex och position:absolut från baskoden */
+    #right-icons {
+        justify-content: center;
+        grid-column: 12 / 13;
+        gap: 20px;
+    }
+
+    #hero {
+        min-height: 900px;
+    }
+
+    #hero-search {
+        grid-column: 5 / 9;
+    }
+
+    /* Nedan styr marginalerna på sidorna */
+    #main {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    #secondary {
+        grid-template-columns: repeat(4, 1fr);
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    .fruktknapp{
+        grid-column: 2 / 4;
+    }
+
+    #extrafrukter.active {
+        grid-column: 1 / 5;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .footer-heading a:hover {
+        color: white;
+    }
+}
+
